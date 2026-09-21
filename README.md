@@ -73,8 +73,8 @@ The project uses the following MySQL tables:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/tobysta/library_db
-cd library_db
+git clone https://github.com/tobysta/library-db
+cd library-db
 ```
 
 ### 2. Create a virtual environment
@@ -104,7 +104,7 @@ pip install Flask Flask-SQLAlchemy PyMySQL
 ## Configure the Database
 
 ```text
-DATABASE_URL=mysql+pymysql://YOUR_USERNAME:YOUR_PASSWORD@localhost/library_db
+DATABASE_URL=mysql+pymysql://YOUR_USERNAME:YOUR_PASSWORD@localhost/library-db
 ```
 
 ```python
@@ -134,7 +134,7 @@ if __name__ == "__main__":
 Move to the project folder:
 
 ```bat
-cd C:\Users\manas\library_db
+cd C:\Users\manas\library-db
 ```
 
 Start the Flask application:
