@@ -73,8 +73,8 @@ The project uses the following MySQL tables:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/tobysta/library-db
-cd library-db
+git clone https://github.com/tobysta/library-app
+cd library-app
 ```
 
 ### 2. Create a virtual environment
