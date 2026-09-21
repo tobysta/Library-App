@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Popular Book Categories (Count > 2)</h2>
+
+<table border="1">
+    <tr>
+        <th>Category</th>
+        <th>Number of Books</th>
+    </tr>
+    {% for cat in categories %}
+    <tr>
+        <td>{{ cat.category }}</td>
+        <td>{{ cat.counting }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p><a href="{{ url_for('main.popular_categories') }}">Refresh</a> | <a href="{{ url_for('main.index') }}">Home</a></p>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %} {# Remove this line if you aren't using a base template #}
+
+{% block content %}
+    <h1>Popular Book Categories</h1>
+
+    {% if categories %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Book Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in categories %}
+                <tr>
+                    <!-- Using index positions handles named tuples flawlessly -->
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No categories found with more than 2 books.</p>
+    {% endif %}
+<p><a href="{{ url_for('main.popular_categories') }}">Refresh</a> | <a href="{{ url_for('main.index') }}">Home</a></p>
+{% endblock %}
+

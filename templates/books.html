@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ Books }}</h2>
+
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Author</th>
+    </tr>
+    {% for book in books %}
+    <tr>
+        <td>{{ book.book_title }}</td>
+        <td>{{ book.category }}</td>
+        <td>{{ book.author }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p><a href="{{ url_for('main.view_fiction_books') }}">Refresh</a> | <a href="{{ url_for('main.index') }}">Home</a></p>
+{% endblock %}

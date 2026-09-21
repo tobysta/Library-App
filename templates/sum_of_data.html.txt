@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Sum of Books Issued by Library & Employee App</h2>
+
+<table border="1">
+    <tr>
+        <th>Book Title</th>
+        <th>Total Issues Count</th>
+    </tr>
+    {% for row in sum_of_data %}
+    <tr>
+        <td>{{ row.book_title }}</td>
+        <td>{{ row.sum }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p><a href="{{ url_for('main.sum_of_books') }}">Refresh</a> | <a href="{{ url_for('main.index') }}">Home</a></p>
+{% endblock %}

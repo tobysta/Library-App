@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Books with Rental Price > 3</h2>
+
+<table border="1">
+    <tr>
+        <th>Book Title</th>
+        <th>Rental Price</th>
+    </tr>
+    {% for p in price %}
+    <tr>
+        <td>{{ p.book_title }}</td>
+        <td>{{ p.rental_price }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p><a href="{{ url_for('main.pricing') }}">Refresh</a> | <a href="{{ url_for('main.index') }}">Home</a></p>
+{% endblock %}

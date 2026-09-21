@@ -1,0 +1,29 @@
+{% extends "base.html" %} {# Remove this line if you do not have a base layout file #}
+
+{% block content %}
+    <h1>Total Book Issues Summary</h1>
+
+    {% if sum_of_data %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Book Title</th>
+                    <th>Total Issues Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in sum_of_data %}
+                <tr>
+                    <!-- Using index notation guarantees rendering even if names conflict -->
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] if row[1] is not none else 0 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No issue counts found in the database.</p>
+    {% endif %}
+<p><a href="{{ url_for('main.sum_of_books') }}">Refresh</a> | <a href="{{ url_for('main.index') }}">Home</a></p>
+
+{% endblock %}

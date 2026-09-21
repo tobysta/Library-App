@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>High Salary Position (Salary > 40000)</h2>
+
+<table border="1">
+    <tr>
+        <th>Position</th>
+        <th>Salary</th>
+    </tr>
+    {% for emp in employees %}
+    <tr>
+        <td>{{ emp.position }}</td>         
+        <td>{{ emp.salary }}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+
+<p><a href="{{ url_for('main.high_salary_employees') }}">Refresh</a> | <a href="{{ url_for('main.index') }}">Home</a></p>
+{% endblock %}
