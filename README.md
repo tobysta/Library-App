@@ -32,6 +32,8 @@ library_db/
 ├── models.py
 ├── routes.py
 ├── requirements.txt
+├── .env
+├── .gitignore
 ├── templates/
 │   ├── base.html
 │   ├── index.html
