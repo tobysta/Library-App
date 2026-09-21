@@ -27,7 +27,7 @@ A data-driven Flask web application that connects a MySQL library database with 
 ## Project Structure
 
 ```text
-library_db/
+library-db/
 ├── app.py
 ├── models.py
 ├── routes.py
