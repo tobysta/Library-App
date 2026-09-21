@@ -32,7 +32,7 @@ library-db/
 ├── models.py
 ├── routes.py
 ├── requirements.txt
-├── .env
+├── .env.example
 ├── .gitignore
 ├── templates/
 │   ├── base.html
