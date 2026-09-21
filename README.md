@@ -104,7 +104,7 @@ pip install Flask Flask-SQLAlchemy PyMySQL
 ## Configure the Database
 
 ```text
-DATABASE_URL=mysql+pymysql://YOUR_USERNAME:YOUR_PASSWORD@localhost/library-db
+DATABASE_URL=mysql+pymysql://YOUR_USERNAME:YOUR_PASSWORD@localhost/library-app
 ```
 
 ```python
@@ -134,7 +134,7 @@ if __name__ == "__main__":
 Move to the project folder:
 
 ```bat
-cd C:\Users\manas\library-db
+cd C:\Users\manas\library-app
 ```
 
 Start the Flask application:
