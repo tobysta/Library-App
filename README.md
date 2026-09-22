@@ -10,7 +10,6 @@ A data-driven Flask web application that connects a MySQL library database with 
 - Calculates total issues for each book title
 - Displays books with a rental price greater than 3
 - Uses Flask routes, SQLAlchemy ORM queries, Jinja HTML templates, and MySQL
-- Includes REST API-ready functionality through Flask JSON responses
 
 ## Technologies Used
 
