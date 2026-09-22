@@ -1,6 +1,6 @@
 # Library-db
 
-A data-driven Flask web application that connects a MySQL library database with Python and displays employee and library reports through HTML pages.
+A data-driven Flask web application that connects a MySQL library database with Python and displays employee and library reports through HTML pages. The application also provides REST API endpoints that return the report data in JSON format.
 
 ## Features
 
@@ -10,6 +10,8 @@ A data-driven Flask web application that connects a MySQL library database with 
 - Calculates total issues for each book title
 - Displays books with a rental price greater than 3
 - Uses Flask routes, SQLAlchemy ORM queries, Jinja HTML templates, and MySQL
+- Provides REST API endpoints for report data in JSON format
+- Demonstrates both server-rendered HTML pages and API-based data access
 
 ## Technologies Used
 
@@ -22,6 +24,8 @@ A data-driven Flask web application that connects a MySQL library database with 
 - HTML
 - CSS
 - Jinja Templates
+- REST API
+- JSON
 
 ## Project Structure
 
@@ -57,7 +61,7 @@ The project uses the following MySQL tables:
 - `return_status`
 - `book_issued_cnt`
 
-## Reports
+## HTML Reports
 
 | Report | Route | Description |
 |---|---|---|
@@ -128,7 +132,18 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-## Run the Application
+## REST API Endpoints
+The application includes REST API endpoints that return report data in JSON format. All endpoints use the `GET` method.
+
+| API Endpoint | Method | JSON Fields Returned | Description |
+|---|---|---|---|
+| `/api/books/fiction` | `GET` | `book_title`, `category`, `author` | Returns fiction books |
+| `/api/employees/high-salary` | `GET` | `position`, `salary` | Returns employee positions with salary greater than 40,000 |
+| `/api/books/popular-categories` | `GET` | `category`, `book_count` | Returns categories with more than two books |
+| `/api/book-issued-count/sum-of-books` | `GET` | `book_title`, `total_issues` | Returns total issued count by book title |
+| `/api/books/pricing` | `GET` | `book_title`, `rental_price` | Returns books with rental price greater than 3 |
+
+## Run the Application(HTML)
 
 Move to the project folder:
 
@@ -146,6 +161,28 @@ Flask will display a local URL similar to:
 
 ```text
 http://127.0.0.1:5000
+```
+
+Open that URL in your browser.
+
+## Run the Application(RestApi)
+
+Move to the project folder:
+
+```bat
+cd C:\Users\manas\library_db_2
+```
+
+Start the Flask application:
+
+```bash
+python app.py
+```
+
+Flask will display a local URL similar to:
+
+```text
+http://127.0.0.1:5000/api/books/fiction
 ```
 
 Open that URL in your browser.
@@ -201,7 +238,7 @@ Through this project, I practiced:
 - Building Flask routes with `Blueprint`
 - Rendering SQL data dynamically using Jinja HTML templates
 - Creating database-driven reports for a simple web UI
-- Structuring a Python web application into models, routes, templates, and static files
+- Structuring a Python web application into models, routes, templates, static files, and API endpoints
 
 ## Author
 
