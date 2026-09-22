@@ -71,6 +71,20 @@ The project uses the following MySQL tables:
 | Total Book Issues | `/book_issued_cnt/sum-of-books` | Calculates total book issues by title |
 | Rental Price Analysis | `/books/pricing` | Displays books with rental price greater than 3 |
 
+## REST API Endpoints
+The application also exposes the same database reports through REST API endpoints. 
+The API routes reuse the SQLAlchemy query logic and return the results in JSON format.
+
+All endpoints use the `GET` method.
+
+| API Endpoint | Method | JSON Fields Returned | Description |
+|---|---|---|---|
+| `/api/books/fiction` | `GET` | `book_title`, `category`, `author` | Returns fiction books |
+| `/api/employees/high-salary` | `GET` | `position`, `salary` | Returns employee positions with salary greater than 40,000 |
+| `/api/books/popular-categories` | `GET` | `category`, `book_count` | Returns categories with more than two books |
+| `/api/book-issued-count/sum-of-books` | `GET` | `book_title`, `total_issues` | Returns total issued count by book title |
+| `/api/books/pricing` | `GET` | `book_title`, `rental_price` | Returns books with rental price greater than 3 |
+
 ## Setup Instructions
 
 ### 1. Clone the repository
@@ -131,17 +145,6 @@ if __name__ == "__main__":
     app = create_app()
     app.run(debug=True)
 ```
-
-## REST API Endpoints
-The application includes REST API endpoints that return report data in JSON format. All endpoints use the `GET` method.
-
-| API Endpoint | Method | JSON Fields Returned | Description |
-|---|---|---|---|
-| `/api/books/fiction` | `GET` | `book_title`, `category`, `author` | Returns fiction books |
-| `/api/employees/high-salary` | `GET` | `position`, `salary` | Returns employee positions with salary greater than 40,000 |
-| `/api/books/popular-categories` | `GET` | `category`, `book_count` | Returns categories with more than two books |
-| `/api/book-issued-count/sum-of-books` | `GET` | `book_title`, `total_issues` | Returns total issued count by book title |
-| `/api/books/pricing` | `GET` | `book_title`, `rental_price` | Returns books with rental price greater than 3 |
 
 ## Run the Application(HTML)
 
