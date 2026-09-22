@@ -22,7 +22,6 @@ A data-driven Flask web application that connects a MySQL library database with 
 - MySQL
 - PyMySQL
 - HTML
-- CSS
 - Jinja Templates
 - REST API
 - JSON
@@ -38,15 +37,14 @@ library-db/
 ├── .env.example
 ├── .gitignore
 ├── templates/
-│   ├── base.html
-│   ├── index.html
-│   ├── books.html
-│   ├── high_salary.html
-│   ├── categories.html
-│   ├── sum_of_data.html
-│   └── price.html
-└── static/
-    └── style.css
+    ├── base.html
+    ├── index.html
+    ├── books.html
+    ├── high_salary.html
+    ├── categories.html
+    ├── sum_of_data.html
+    └── price.html
+
 ```
 
 ## Database Tables
@@ -112,10 +110,6 @@ venv\Scripts\activate
 
 ```bash
 pip install -r requirements.txt
-```
-
-```bash
-pip install Flask Flask-SQLAlchemy PyMySQL
 ```
 
 ## Configure the Database
@@ -241,7 +235,7 @@ Through this project, I practiced:
 - Building Flask routes with `Blueprint`
 - Rendering SQL data dynamically using Jinja HTML templates
 - Creating database-driven reports for a simple web UI
-- Structuring a Python web application into models, routes, templates, static files, and API endpoints
+- Structuring a Python web application into models, routes, templates, and API endpoints
 
 ## Author
 
