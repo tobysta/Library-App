@@ -13,15 +13,8 @@ def view_fiction_books():
     fiction_books = Book.query.filter_by(category='Fiction').all()
     return render_template('books.html', books=fiction_books, title="Fiction Books")
 
-from sqlalchemy import desc
-# Make sure to import your db instance (e.g., from your_app import db)
-
-from sqlalchemy import desc
-# Ensure your db instance is imported here
-
 @main.route('/employees/high-salary')
 def high_salary_employees():
-    # Explicitly select name, salary, and position
     high_earners = (
         db.session.query(Employee.position ,Employee.salary)
         .filter(Employee.salary > 40000)
@@ -31,8 +24,6 @@ def high_salary_employees():
     
     
     return render_template('high_salary.html', employees=high_earners)
-
-
 
 @main.route('/books/popular-categories')
 def popular_categories():
@@ -49,7 +40,6 @@ def popular_categories():
 
 @main.route('/book_issued_cnt/sum-of-books')
 def sum_of_books():
-    # Fixed: Removed tab indentation and replaced with standard spaces
     sum_data = (
         db.session.query(
             BookIssuedCnt.book_title,
@@ -62,7 +52,6 @@ def sum_of_books():
 
 @main.route('/books/pricing')
 def pricing():
-    # Fixed: Changed 'books' to the correct imported class 'Book'
     pricing_books = (
         db.session.query(Book.book_title, Book.rental_price)
         .filter(Book.rental_price > 3)
