@@ -133,7 +133,7 @@ if __name__ == "__main__":
 Move to the project folder:
 
 ```bat
-cd C:\Users\manas\library-app
+cd C:\Users\manas\library-db
 ```
 
 Start the Flask application:
